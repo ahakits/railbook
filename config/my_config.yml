@@ -1,0 +1,17 @@
+common: &common
+  logo:
+    source: "http://rubyonrails.org/images/rails-logo.svg"
+    width: 220
+    height: 78
+
+development:
+  hoge: "dev"
+  <<: *common
+
+test:
+  hoge: "test"
+  <<: *common
+
+production:
+  hoge: "pro"
+  <<: *common
