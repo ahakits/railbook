@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get 'view/form_tag'
   post 'view/create'
+
+  get 'view/form_for'
 end
