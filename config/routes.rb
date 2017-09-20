@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   get 'view/keyword'
   post 'keyword/search'
+
+  get 'view/form_tag'
+  post 'view/create'
 end
