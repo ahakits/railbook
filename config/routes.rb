@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get 'hello/view'
   get 'hello/list'
   get 'hello/app_var'
+
+  get 'view/keyword'
+  post 'keyword/search'
 end
