@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   get 'view/html5'
 
   get 'view/select'
+
+  get 'view/col_select'
 end
