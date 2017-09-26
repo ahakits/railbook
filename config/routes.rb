@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   get 'view/select'
 
   get 'view/col_select'
+
+  get 'view/group_select'
 end
