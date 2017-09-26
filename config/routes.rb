@@ -21,12 +21,14 @@ Rails.application.routes.draw do
   get 'view/form_for'
 
   get 'view/field'
-
   get 'view/html5'
 
   get 'view/select'
-
   get 'view/col_select'
-
+  get 'view/col_select2'
   get 'view/group_select'
+  get 'view/group_select2'
+
+  get 'view/select_tag'
+  get 'view/select_tag2'
 end
