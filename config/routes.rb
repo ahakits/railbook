@@ -37,4 +37,14 @@ Rails.application.routes.draw do
   get 'view/col_radio'
 
   get 'view/fields'
+
+  get 'view/simple_format'
+  get 'view/truncate'
+  get 'view/excerpt'
+  get 'view/highlight'
+  get 'view/conc'
+  get 'view/sanitize'
+  get 'view/format'
+  get 'view/number_to'
+  get 'view/datetime'
 end
