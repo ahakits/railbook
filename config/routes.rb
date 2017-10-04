@@ -55,4 +55,9 @@ Rails.application.routes.draw do
   get 'view/linkif'
   get 'view/current'
   get 'view/mailto'
+
+  get 'view/image_tag'
+  get 'view/audio'
+  get 'view/video'
+  get 'view/path'
 end
