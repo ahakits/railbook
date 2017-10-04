@@ -40,4 +40,5 @@ Rails.application.routes.draw do
 
   get 'view/simple_format'
   get 'view/truncate'
+  get 'view/excerpt'
 end
