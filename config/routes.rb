@@ -49,4 +49,7 @@ Rails.application.routes.draw do
   get 'view/datetime'
 
   get 'view/link'
+  get 'view/urlfor'
+  get 'view/new'
+  get 'member/login'
 end
