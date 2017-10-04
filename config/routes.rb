@@ -44,4 +44,5 @@ Rails.application.routes.draw do
   get 'view/highlight'
   get 'view/conc'
   get 'view/sanitize'
+  get 'view/format'
 end
