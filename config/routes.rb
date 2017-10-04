@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get 'view/select_tag2'
 
   get 'view/dat_select'
+
+  get 'view/col_radio'
 end
