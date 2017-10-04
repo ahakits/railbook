@@ -31,4 +31,6 @@ Rails.application.routes.draw do
 
   get 'view/select_tag'
   get 'view/select_tag2'
+
+  get 'view/dat_select'
 end
