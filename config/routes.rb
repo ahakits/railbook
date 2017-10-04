@@ -57,4 +57,6 @@ Rails.application.routes.draw do
   get 'view/mailto'
 
   get 'view/image_tag'
+  get 'view/audio'
+  get 'view/video'
 end
