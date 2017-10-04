@@ -47,4 +47,12 @@ Rails.application.routes.draw do
   get 'view/format'
   get 'view/number_to'
   get 'view/datetime'
+
+  get 'view/link'
+  get 'view/urlfor'
+  get 'view/new'
+  get 'member/login'
+  get 'view/linkif'
+  get 'view/current'
+  get 'view/mailto'
 end
