@@ -52,4 +52,6 @@ Rails.application.routes.draw do
   get 'view/urlfor'
   get 'view/new'
   get 'member/login'
+  get 'view/linkif'
+  get 'view/current'
 end
