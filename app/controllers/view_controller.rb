@@ -68,4 +68,8 @@ class ViewController < ApplicationController
   def partial_basic
     @book = Book.find(1)
   end
+
+  def partial_param
+    @book = Book.find(1)
+  end
 end
