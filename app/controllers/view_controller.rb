@@ -64,4 +64,8 @@ class ViewController < ApplicationController
     @msg = '今日も良い天気です。'
     render layout: 'child'
   end
+
+  def partial_basic
+    @book = Book.find(1)
+  end
 end
