@@ -60,4 +60,7 @@ Rails.application.routes.draw do
   get 'view/audio'
   get 'view/video'
   get 'view/path'
+
+  get 'view/capture'
+  get 'view/content_tag'
 end
