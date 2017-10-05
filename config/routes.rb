@@ -73,4 +73,9 @@ Rails.application.routes.draw do
   get 'view/download'
   get 'view/quest'
   get 'view/nest'
+
+  get 'view/partial_basic'
+  get 'view/partial_param'
+  get 'view/partial_col'
+  get 'view/partial_spacer'
 end
