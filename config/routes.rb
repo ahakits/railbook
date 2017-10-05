@@ -63,4 +63,6 @@ Rails.application.routes.draw do
 
   get 'view/capture'
   get 'view/content_tag'
+
+  get 'view/helper'
 end
