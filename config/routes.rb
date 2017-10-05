@@ -72,4 +72,5 @@ Rails.application.routes.draw do
   get 'view/relation'
   get 'view/download'
   get 'view/quest'
+  get 'view/nest'
 end
