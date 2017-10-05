@@ -20,4 +20,16 @@ module ViewHelper
     # 指定されたフォーマットで日付時刻値を整形
     datetime.strftime(format)
   end
+
+  # collection: リストのもととなるオブジェクト配列
+  # prop: 一覧するプロパティ名
+  def list_tag(collection, prop)
+    # <ul>要素を生成
+    content_tag(:ul) do
+      # <ul>要素配下の<li>要素を順に生成
+      collection.each do |element|
+        concat content_tag(:li, element.attributes[prop])
+      end
+    end
+  end
 end
