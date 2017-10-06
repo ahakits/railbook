@@ -89,4 +89,5 @@ Rails.application.routes.draw do
   get 'record/where_or'
   get 'record/reorder'
   get 'record/select'
+  get 'record/select2'
 end
