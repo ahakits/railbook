@@ -99,4 +99,5 @@ Rails.application.routes.draw do
   get 'record/where2'
   get 'record/unscope'
   get 'record/none(/:id)' => 'record#none'
+  get 'record/pluck'
 end
