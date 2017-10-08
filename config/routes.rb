@@ -95,4 +95,5 @@ Rails.application.routes.draw do
   get 'record/first'
   get 'record/last'
   get 'record/groupby'
+  get 'record/havingby'
 end
