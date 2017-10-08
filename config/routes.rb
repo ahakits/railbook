@@ -106,4 +106,5 @@ Rails.application.routes.draw do
   get 'record/count'
   get 'record/average'
   get 'record/groupby2'
+  get 'record/literal_sql'
 end
