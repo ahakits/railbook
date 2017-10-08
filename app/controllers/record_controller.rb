@@ -62,4 +62,14 @@ class RecordController < ApplicationController
     @books    = Book.order(published: :desc).limit(page_size).offset(page_size * page_num)
     render 'hello/list'
   end
+
+  def first
+    @book = Book.order(:published).first
+    render 'books/show'
+  end
+
+  def last
+    @book = Book.order(published: :desc).last
+    render 'books/show'
+  end
 end
