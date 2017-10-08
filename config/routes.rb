@@ -94,4 +94,5 @@ Rails.application.routes.draw do
   get 'record/page(/:id)' => 'record#page'
   get 'record/first'
   get 'record/last'
+  get 'record/groupby'
 end
