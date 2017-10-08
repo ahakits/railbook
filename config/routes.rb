@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :members
   resources :fan_comments
   resources :reviews
   resources :authors
@@ -107,4 +108,9 @@ Rails.application.routes.draw do
   get 'record/average'
   get 'record/groupby2'
   get 'record/literal_sql'
+  get 'record/update_all'
+  get 'record/update_all2'
+  get 'record/destroy_all'
+  get 'record/transact'
+  get 'record/enum_rec'
 end
