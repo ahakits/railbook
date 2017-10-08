@@ -103,4 +103,5 @@ Rails.application.routes.draw do
   get 'record/exists'
   get 'record/scope'
   get 'record/def_scope'
+  get 'record/count'
 end
