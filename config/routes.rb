@@ -104,4 +104,6 @@ Rails.application.routes.draw do
   get 'record/scope'
   get 'record/def_scope'
   get 'record/count'
+  get 'record/average'
+  get 'record/groupby2'
 end

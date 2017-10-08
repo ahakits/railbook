@@ -133,4 +133,13 @@ class RecordController < ApplicationController
     cnt = Book.where(publish: '技術評論社').count
     render plain: "#{cnt}件です。"
   end
+
+  def average
+    price = Book.where(publish: '技術評論社').average(:price)
+    render plain: "平均価格は#{price}円です。"
+  end
+
+  def groupby2
+    @books = Book.group(:publish).average(:price)
+  end
 end
