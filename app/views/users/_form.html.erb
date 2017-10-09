@@ -27,6 +27,11 @@
     </div>
 
     <div class="field">
+      <%= form.label :email_confirmation %>
+      <%= form.text_field :email_confirmation %>
+    </div>
+
+    <div class="field">
       <%= form.label :dm %>
       <%= form.check_box :dm, id: :user_dm %>
     </div>
