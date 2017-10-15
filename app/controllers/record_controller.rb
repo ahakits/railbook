@@ -224,4 +224,9 @@ class RecordController < ApplicationController
   def has_many_through
     @user = User.find_by(username: 'isatou')
   end
+
+  def cache_counter
+    @user = User.find(1)
+    render plain: @user.reviews.size
+  end
 end
