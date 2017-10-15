@@ -19,9 +19,14 @@ class Book < ApplicationRecord
 =end
 
   validates :isbn,
-            presence:   true,
-            uniqueness: { allow_blank: true },
-            length:     { is: 17, allow_blank: true },
-            format:     { with: /\A[0-9]{3}-[0-9]-[0-9]{3,5}-[0-9]{4}-[0-9X]\z/, allow_blank: true }
+            presence:   { message: 'は必須です' },
+            uniqueness: { allow_blank: true,
+                          message:     '%{value}は一意でなければなりません' },
+            length:     { is:          17,
+                          allow_blank: true,
+                          message:     '%{value}は%{count}桁でなければなりません' },
+            format:     { with:        /\A[0-9]{3}-[0-9]-[0-9]{3,5}-[0-9]{4}-[0-9X]\z/,
+                          allow_blank: true,
+                          message:     '%{value}は正しい形式ではありません' }
   validates :title, uniqueness: { scope: :publish }
 end
