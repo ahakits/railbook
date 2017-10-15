@@ -25,8 +25,6 @@ class Book < ApplicationRecord
             length:     { is:          17,
                           allow_blank: true,
                           message:     '%{value}は%{count}桁でなければなりません' },
-            format:     { with:        /\A[0-9]{3}-[0-9]-[0-9]{3,5}-[0-9]{4}-[0-9X]\z/,
-                          allow_blank: true,
-                          message:     '%{value}は正しい形式ではありません' }
+            isbn:       true
   validates :title, uniqueness: { scope: :publish }
 end
