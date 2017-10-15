@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecordController < ApplicationController
   def find
     @books = Book.find(2, 5, 10)
@@ -228,5 +230,15 @@ class RecordController < ApplicationController
   def cache_counter
     @user = User.find(1)
     render plain: @user.reviews.size
+  end
+
+  def memorize
+    @book = Book.find(1)
+    @memo = @book.memos.build(body: 'あとで買う')
+    if @memo.save
+      render plain: 'メモを作成しました。'
+    else
+      render plain: @memo.errors.full_messages[0]
+    end
   end
 end
