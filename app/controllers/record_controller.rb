@@ -263,4 +263,8 @@ class RecordController < ApplicationController
                  .select('books.*, reviews.body')
     render 'assoc_join3'
   end
+
+  def assoc_includes
+    @books = Book.includes(:reviews).all
+  end
 end
