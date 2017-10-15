@@ -257,4 +257,10 @@ class RecordController < ApplicationController
     @books = Book.joins('LEFT OUTER JOIN reviews ON reviews.book_id = books.id')
                  .select('books.*, reviews.body')
   end
+
+  def assoc_join4
+    @books = Book.left_outer_joins(:reviews)
+                 .select('books.*, reviews.body')
+    render 'assoc_join3'
+  end
 end
