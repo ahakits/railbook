@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecordController < ApplicationController
   def find
     @books = Book.find(2, 5, 10)
@@ -203,5 +205,66 @@ class RecordController < ApplicationController
     else
       render plain: @search.errors.full_messages[0]
     end
+  end
+
+  def belong
+    @review = Review.find(3)
+  end
+
+  def hasmany
+    @book = Book.find_by(isbn: '978-4-7741-8411-1')
+  end
+
+  def hasone
+    @user = User.find_by(username: 'yyamada')
+  end
+
+  def has_and_belongs
+    @book = Book.find_by(isbn: '978-4-7980-4803-1')
+  end
+
+  def has_many_through
+    @user = User.find_by(username: 'isatou')
+  end
+
+  def cache_counter
+    @user = User.find(1)
+    render plain: @user.reviews.size
+  end
+
+  def memorize
+    @book = Book.find(1)
+    @memo = @book.memos.build(body: 'あとで買う')
+    if @memo.save
+      render plain: 'メモを作成しました。'
+    else
+      render plain: @memo.errors.full_messages[0]
+    end
+  end
+
+  def assoc_join
+    @books = Book.joins(:reviews, :authors)
+                 .order('books.title, reviews.updated_at')
+                 .select('books.*, reviews.body, authors.name')
+  end
+
+  def assoc_join2
+    @books = Book.joins(reviews: :user)
+                 .select('books.*, reviews.body, users.username')
+  end
+
+  def assoc_join3
+    @books = Book.joins('LEFT OUTER JOIN reviews ON reviews.book_id = books.id')
+                 .select('books.*, reviews.body')
+  end
+
+  def assoc_join4
+    @books = Book.left_outer_joins(:reviews)
+                 .select('books.*, reviews.body')
+    render 'assoc_join3'
+  end
+
+  def assoc_includes
+    @books = Book.includes(:reviews).all
   end
 end
