@@ -118,4 +118,5 @@ Rails.application.routes.draw do
   post 'record/keywd_process'
   get 'record/belongs'
   get 'record/hasmany'
+  get 'record/hasone'
 end
