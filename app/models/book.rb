@@ -8,7 +8,7 @@ class Book < ApplicationRecord
             presence:   true,
             uniqueness: true,
             length:     { is: 17 },
-            format:     { with: /\A[0-9]{3}-{0-9}-[0-9]{3, 5}-[0-9]{4}-[0-9X]\z/ }
+            format:     { with: /\A[0-9]{3}-[0-9]-[0-9]{3, 5}-[0-9]{4}-[0-9X]\z/ }
   validates :title,
             presence: true,
             length:   { minimum: 1, maximum: 100 }
@@ -17,4 +17,11 @@ class Book < ApplicationRecord
   validates :publish,
             inclusion: { in: %w(技術評論社 翔泳社 秀和システム 日経BP社 ソシム) }
 =end
+
+  validates :isbn,
+            presence:   true,
+            uniqueness: { allow_blank: true },
+            length:     { is: 17, allow_blank: true },
+            format:     { with: /\A[0-9]{3}-[0-9]-[0-9]{3,5}-[0-9]{4}-[0-9X]\z/, allow_blank: true }
+  validates :title, uniqueness: { scope: :publish }
 end
