@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  validates :agreement, acceptance: true
+  validates :agreement, acceptance: { on: :create }
   validates :email, confirmation: true
 end
