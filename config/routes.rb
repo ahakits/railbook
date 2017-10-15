@@ -123,4 +123,7 @@ Rails.application.routes.draw do
   get 'record/has_many_through'
   get 'record/cache_counter'
   get 'record/memorize'
+  get 'record/assoc_join'
+  get 'record/assoc_join2'
+  get 'record/assoc_join3'
 end

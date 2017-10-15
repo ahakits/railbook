@@ -241,4 +241,20 @@ class RecordController < ApplicationController
       render plain: @memo.errors.full_messages[0]
     end
   end
+
+  def assoc_join
+    @books = Book.joins(:reviews, :authors)
+                 .order('books.title, reviews.updated_at')
+                 .select('books.*, reviews.body, authors.name')
+  end
+
+  def assoc_join2
+    @books = Book.joins(reviews: :user)
+                 .select('books.*, reviews.body, users.username')
+  end
+
+  def assoc_join3
+    @books = Book.joins('LEFT OUTER JOIN reviews ON reviews.book_id = books.id')
+                 .select('books.*, reviews.body')
+  end
 end
