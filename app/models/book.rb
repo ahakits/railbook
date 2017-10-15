@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   has_many :reviews
-  has_and_belongs_to_many :authors
+  has_many :users, through: :reviews
 
   scope :gihyo, -> { where(publish: '技術評論社') }
   scope :newer, -> { order(published: :desc) }
