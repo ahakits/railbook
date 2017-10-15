@@ -24,7 +24,12 @@ class Book < ApplicationRecord
                           message:     '%{value}は一意でなければなりません' },
             length:     { is:          17,
                           allow_blank: true,
-                          message:     '%{value}は%{count}桁でなければなりません' },
-            isbn:       true
+                          message:     '%{value}は%{count}桁でなければなりません' }
+  validate :isbn_valid?
   validates :title, uniqueness: { scope: :publish }
+
+  private
+  def isbn_valid?
+    errors.add(:isbn, 'は正しい形式ではありません。') unless isbn =~ /\A([0-9]{3}-)?[0-9]-[0-9]{3,5}-[0-9]{4}-[0-9X]\z/
+  end
 end
