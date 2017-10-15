@@ -113,4 +113,7 @@ Rails.application.routes.draw do
   get 'record/destroy_all'
   get 'record/transact'
   get 'record/enum_rec'
+
+  get 'record/keywd'
+  post 'record/keywd_process'
 end
