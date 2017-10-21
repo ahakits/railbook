@@ -10,5 +10,15 @@ class CreateBooks < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    reversible do |dir|
+      dir.up do
+        execute 'CREATE VIEW gihyo_books AS SELECT * FROM books WHERE publish = "技術評論社"'
+      end
+
+      dir.down do
+        execute 'DROP VIEW gihyo_books'
+      end
+    end
   end
 end
