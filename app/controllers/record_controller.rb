@@ -267,4 +267,9 @@ class RecordController < ApplicationController
   def assoc_includes
     @books = Book.includes(:reviews).all
   end
+
+  def attr
+    @book = Book.find(1)
+    render plain: @book.price.class
+  end
 end
