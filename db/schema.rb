@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008205656) do
+ActiveRecord::Schema.define(version: 20171021100812) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.string "name"
-    t.date "birth"
     t.text "address"
     t.string "ctype"
     t.binary "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birth"
     t.index ["user_id"], name: "index_authors_on_user_id"
   end
 
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20171008205656) do
   end
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "isbn"
-    t.string "title"
+    t.string "isbn", limit: 17, null: false
+    t.string "title", limit: 100, null: false
     t.integer "price"
-    t.string "publish"
+    t.string "publish", limit: 20, default: "技術評論社"
     t.date "published"
     t.boolean "dl"
     t.datetime "created_at", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20171008205656) do
     t.string "email"
     t.boolean "dm"
     t.string "roles"
-    t.integer "reviews_count"
+    t.integer "reviews_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
